@@ -5,7 +5,10 @@ MAINTAINER James <james@mercstudio.com>
 
 RUN apk add --no-cache poppler-utils
 
-ENTRYPOINT ["/usr/bin/pdftotext"]
+RUN mkdir /data
+VOLUME "/data"
+
+ENTRYPOINT ["/usr/bin/pdfinfo"]
 
 #CMD ["-layout", "-", "-"] 
 

@@ -1,16 +1,9 @@
-# pdftotext
+# pdfinfo
 
 ### Usage
 ```
-# Convert from in.pdf to out.txt
-docker run --rm -i mercstudio/pdftotext -layout - - < in.pdf > out.txt
-
-# Convert from in.pdf to stdout
-docker run --rm -i mercstudio/pdftotext -layout - - < in.pdf
-
-# Convert from in.pdf with specific page
-docker run --rm -i mercstudio/pdftotext -layout -f [page] -l [page] - - < in.pdf
-
+# bind current directory and file
+docker run --rm -i -v "$PWD":"/data" pdfinfo /data/9911012.pdf
 ```
 ### External
-https://linux.die.net/man/1/pdftotext
+https://linux.die.net/man/1/pdfinfo
